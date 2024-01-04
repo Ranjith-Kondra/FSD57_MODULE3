@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.EmployeeDAO;
+import com.dto.Employee;
+
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -29,23 +32,35 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			rd.forward(request, response);
 			
 		} else {			
-			out.println("<body bgcolor='lightyellow' text='red'>");
-			out.println("<center>");
-			out.println("<h1>Invalid Credentials</h1>");
 			
-			RequestDispatcher rd = request.getRequestDispatcher("Login.html");
-			rd.include(request, response);
+			
+			EmployeeDAO empDao = new EmployeeDAO();
+			Employee emp = empDao.empLogin(emailId, password);
+			
+			if (emp != null) {
+				
+				RequestDispatcher rd = request.getRequestDispatcher("EmpHomePage");
+				rd.forward(request, response);
+				
+			} else {
+				out.println("<body bgcolor='lightyellow' text='red'>");
+				out.println("<center>");
+				out.println("<h1>Invalid Credentials</h1>");
+				
+				RequestDispatcher rd = request.getRequestDispatcher("Login.html");
+				rd.include(request, response);
+			}
+			
+			
 		}
 		out.println("</center>");
 		out.println("</body>");
 		out.println("</html>");
 		
 	}
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	doGet(request, response);
+}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doGet(request, response);
-	}
 
 }
