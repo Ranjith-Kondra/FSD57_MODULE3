@@ -10,35 +10,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/HRHomePage")
+public class HRHomePage extends HttpServlet {
+	
+    
 
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
 	
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		String emailId = request.getParameter("emailId");
-		String password = request.getParameter("password");
-		
-		out.println("<html>");
-		if (emailId.equalsIgnoreCase("HR") && password.equals("HR")) {			
+		   String emailId = request.getParameter("emailId");
 			
-			RequestDispatcher rd = request.getRequestDispatcher("HRHomePage");
-			rd.forward(request, response);
-			
-		} else {			
+		    out.println("</html>");	
 			out.println("<body bgcolor='lightyellow' text='red'>");
-			out.println("<center>");
-			out.println("<h1>Invalid Credentials</h1>");
 			
-			RequestDispatcher rd = request.getRequestDispatcher("Login.html");
-			rd.include(request, response);
-		}
-		out.println("</center>");
-		out.println("</body>");
-		out.println("</html>");
+			//for username
+			out.println("<h3 style = 'color:red;'>Welcome " + emailId +  " !</h3>");
+			//For Logout
+			out.print("<form align='right'>");
+			out.print("<a href='Logout'>Logout</>");
+			out.print("<form>");
+
+			out.println("<center>");
+			out.println("<h1>Invalid Credentials</h1>");			
+		
+		    out.println("</center>");
+		    out.println("</body>");
+		    out.println("</html>");
 		
 	}
 
