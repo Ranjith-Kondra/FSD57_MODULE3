@@ -24,7 +24,7 @@
 
         <tr>
             <td>Enter MobileNo</td>
-            <td><input type="number" name="salary" placeholder="Enter your salary" /></td>
+            <td><input type="number" name="mobileNo" placeholder="Enter your MobileNo" /></td>
         </tr> 
 
         <tr>

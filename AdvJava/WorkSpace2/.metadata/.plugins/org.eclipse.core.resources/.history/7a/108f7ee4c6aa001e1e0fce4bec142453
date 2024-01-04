@@ -41,7 +41,7 @@ public class RegisterServlet extends HttpServlet {
 	        System.out.println("Employee Name: "+ename);
 	        System.out.println("Email: " +email);
 	        System.out.println("password : " +password);
-	        System.out.println("salary : " +salary);
+	        System.out.println("MobileNo : " +MobileNo);
 	        System.out.println("Gender : " +gender);
 	    }
 
