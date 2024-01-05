@@ -28,7 +28,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("<a href='Logout'>Logout</a>");
 		out.println("</form>");
 		out.println("<center>");
-		out.println("<h1>Welcome to HrHomePage</h1>");			
+		out.println("<h1>Welcome to HrHomePage</h1>");
+		out.println("<h3>");
+		out.println("<a href ='GetAllEmps'>GetAllEmployees</a> &nbsp; &nbsp");
+		out.println("<a href =''>getEmpById</a>");
+		out.println("</h3");
+		
+		
 		out.println("</center>");
 		out.println("</body>");
 		out.println("</html>");

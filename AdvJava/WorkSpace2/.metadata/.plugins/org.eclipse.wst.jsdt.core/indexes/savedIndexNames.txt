@@ -1,7 +1,6 @@
 INDEX VERSION 1.3+C:\fsd57_module3\AdvJava\WorkSpace2\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 4294488331.index
 3268989307.index
-3268989307.index
 2243267960.index
 3413176471.index
 2263519666.index

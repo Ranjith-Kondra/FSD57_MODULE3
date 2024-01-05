@@ -3,47 +3,52 @@ package com.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.EmployeeDAO;
+import com.dto.Employee;
+
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
 	
-	 protected void doGet(HttpServletRequest request, HttpServletResponse response)
-	            throws ServletException, IOException {
-
-	        response.setContentType("text/html");
-	        PrintWriter out = response.getWriter();
-
-	        String ename = request.getParameter("EmployeeName");
-	        String email = request.getParameter("EmployeeEmailid");
-	        String password = request.getParameter("Password");
-	        String salary = request.getParameter("salary");
-	        String gender = request.getParameter("Gender");
-
-	        out.println("<html>");
-	        
-	        out.println("<body bgcolor='yellow' text='black'>");
-	        out.println("<center>");
-	        out.println("<h1>Registration Details</h1>");
-	        out.println("<p>Employee Name: " + ename + "</p>");
-	        out.println("<p>Email: " + email + "</p>");
-	        out.println("<p>Password: " + password + "</p>");
-	        out.println("<p>salary: " + salary + "</p>");
-	        out.println("<p>Gender: " + gender + "</p>");
-	        out.println("</center>");
-	        out.println("</body>");
-	        out.println("</html>");
-	        
-	        System.out.println("Employee Name: "+ename);
-	        System.out.println("Email: " +email);
-	        System.out.println("password : " +password);
-	        System.out.println("salary : " +salary);
-	        System.out.println("Gender : " +gender);
-	    }
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		String empName = request.getParameter("empName");
+		double salary = Double.parseDouble(request.getParameter("salary"));
+		String gender = request.getParameter("gender");
+		String emailId = request.getParameter("emailId");
+		String password = request.getParameter("password");
+		
+		Employee emp = new Employee(0, empName, salary, gender, emailId, password);
+		
+		EmployeeDAO empDao = new EmployeeDAO();
+		int result = empDao.registerEmployee(emp);
+		
+		out.println("<center>");
+		
+		if (result > 0) {			
+			out.println("<h1 style='color:green;'>Employee Registered Successfully!!!</h1> <br/>");
+					
+			RequestDispatcher rd = request.getRequestDispatcher("Login.html");
+			rd.include(request, response);
+			
+		} else {			
+			
+			RequestDispatcher rd = request.getRequestDispatcher("Register.html");
+			rd.include(request, response);
+			
+			out.println("<h1 style='color:red;'>Unable Register the Employee Recored!!!</h1>");
+		}
+		out.println("<center>");
+	}
 
 
 	
