@@ -25,3 +25,15 @@
 0:0:0:0:0:0:0:1 - - [05/Jan/2024:16:00:51 +0530] "GET /EmpWebApp/Register.html HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [05/Jan/2024:16:01:42 +0530] "POST /EmpWebApp/Register HTTP/1.1" 404 773
 0:0:0:0:0:0:0:1 - - [05/Jan/2024:16:02:30 +0530] "POST /EmpWebApp/Register HTTP/1.1" 404 773
+127.0.0.1 - - [05/Jan/2024:16:06:35 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:16:06:35 +0530] "GET /EmpWebApp/Register.html HTTP/1.1" 200 1044
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:16:07:12 +0530] "POST /EmpWebApp/RegisterServlet HTTP/1.1" 200 756
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:16:07:42 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 231
+127.0.0.1 - - [05/Jan/2024:17:15:57 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:17:15:58 +0530] "GET /EmpWebApp/Register.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:17:16:17 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 231
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:17:16:43 +0530] "GET /EmpWebApp/Logout HTTP/1.1" 200 663
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:17:16:53 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 335
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:17:16:55 +0530] "GET /EmpWebApp/GetAllEmps HTTP/1.1" 200 1002
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:17:17:02 +0530] "GET /EmpWebApp/GetEmpById.html HTTP/1.1" 200 394
+0:0:0:0:0:0:0:1 - - [05/Jan/2024:17:17:07 +0530] "POST /EmpWebApp/GetEmpById HTTP/1.1" 200 590

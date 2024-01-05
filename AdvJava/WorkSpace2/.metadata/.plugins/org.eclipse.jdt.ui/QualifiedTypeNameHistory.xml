@@ -10,4 +10,5 @@
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="com.dao.EmployeeDAO"/>
 <fullyQualifiedTypeName name="com.dto.Employee"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

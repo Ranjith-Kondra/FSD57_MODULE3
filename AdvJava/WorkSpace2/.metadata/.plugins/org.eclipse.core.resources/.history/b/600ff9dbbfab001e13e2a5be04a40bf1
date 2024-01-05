@@ -19,7 +19,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		//String emailId = request.getParameter("emailId");
+		String emailId = request.getParameter("emailId");
 		
 		HttpSession session = request.getSession(false);
 		String emailId = (String) session.getAttribute("emailId");

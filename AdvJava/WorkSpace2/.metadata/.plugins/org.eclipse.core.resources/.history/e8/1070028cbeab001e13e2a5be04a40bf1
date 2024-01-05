@@ -141,56 +141,7 @@ public int registerEmployee(Employee emp) {
 	return 0;
 }
 
-public Employee getEmployeeById(int empId) {	
-	
-	Connection con = dbConnection.getConnection();
-	PreparedStatement pst = null;
-	ResultSet rs = null;
-	
-	String selectQuery = "Select * from employee where empId=?";
-	
-	
-	try {
-		pst = con.prepareStatement(selectQuery);
-		pst.setInt(1, empId);
-		rs = pst.executeQuery();
-		
-		if (rs.next()) {
-			
-			Employee emp = new Employee();
-			
-			emp.setEmpId(rs.getInt(1));
-			emp.setEmpName(rs.getString(2));
-			emp.setSalary(rs.getDouble(3));
-			emp.setGender(rs.getString(4));
-			emp.setEmailId(rs.getString(5));
-			emp.setPassword(rs.getString(6));
-			
-			return emp;
-		}
-		
-	} catch (SQLException e) {
-		e.printStackTrace();
-	}
-	
-	finally {
-		if (con != null) {
-			try {
-				rs.close();
-				pst.close();
-				con.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	return null;
-}
+
 
 }
-
-
-
-
 
