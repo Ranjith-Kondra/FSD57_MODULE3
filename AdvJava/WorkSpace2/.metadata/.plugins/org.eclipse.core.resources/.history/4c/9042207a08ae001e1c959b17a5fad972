@@ -43,13 +43,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			Employee emp = empDao.empLogin(emailId, password);
 			
 			if (emp != null) {
-
-			    //Store Employee information(Object) under Session
-			    session.setAttribute("emp", emp);
-							
-			    RequestDispatcher rd = request.getRequestDispatcher("EmpHomePage");
-			    rd.forward(request, response);
-							
+				
+				RequestDispatcher rd = request.getRequestDispatcher("EmpHomePage");
+				rd.forward(request, response);
+				
 			} else {
 				out.println("<body bgcolor='lightyellow' text='red'>");
 				out.println("<center>");

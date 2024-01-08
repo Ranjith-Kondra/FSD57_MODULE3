@@ -28,7 +28,6 @@ public class EmpHomePage extends HttpServlet {
 			out.println("<h3 style = 'color:red;'>Welcome " + emailId +  " !</h3>");
 			//For Logout
 			out.print("<form align='right'>");
-			out.print("<a href='EmpHomePage'>Home</a> &nbsp;");
 			out.print("<a href='Logout'>Logout</>");
 			out.print("<form>");
 

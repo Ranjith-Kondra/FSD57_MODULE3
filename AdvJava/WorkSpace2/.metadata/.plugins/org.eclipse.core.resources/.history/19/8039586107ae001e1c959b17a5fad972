@@ -28,13 +28,12 @@ public class EmpHomePage extends HttpServlet {
 			out.println("<h3 style = 'color:red;'>Welcome " + emailId +  " !</h3>");
 			//For Logout
 			out.print("<form align='right'>");
-			out.print("<a href='EmpHomePage'>Home</a> &nbsp;");
 			out.print("<a href='Logout'>Logout</>");
 			out.print("<form>");
 
 			out.println("<center>");
 			out.println("<h1>Welcome to EmpHomePage</h1>");			
-		    out.println("<h3><a href = 'Profile'>Profile</a></h3>");
+		    out.println("<h3><a href = ''>Profile</a></h3>");
 		    out.println("</center>");
 		    out.println("</body>");
 		    out.println("</html>");
