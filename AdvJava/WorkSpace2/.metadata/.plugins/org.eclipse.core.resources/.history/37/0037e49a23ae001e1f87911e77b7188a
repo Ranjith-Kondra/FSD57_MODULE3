@@ -31,7 +31,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			//Storing employees list under request object
 			request.setAttribute("empList", empList);
 			
-			RequestDispatcher rd = request.getRequestDispatcher("GetAllEmp.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("GetAllEmps.jsp");
 			rd.forward(request, response);			
 		
 		} else {	

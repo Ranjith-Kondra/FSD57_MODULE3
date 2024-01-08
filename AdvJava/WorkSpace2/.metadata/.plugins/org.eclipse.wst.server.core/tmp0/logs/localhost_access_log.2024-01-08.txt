@@ -28,3 +28,9 @@
 0:0:0:0:0:0:0:1 - - [08/Jan/2024:15:06:11 +0530] "GET /EmpWebApp/GetAllEmps HTTP/1.1" 200 1038
 0:0:0:0:0:0:0:1 - - [08/Jan/2024:15:06:32 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 275
 0:0:0:0:0:0:0:1 - - [08/Jan/2024:15:06:34 +0530] "GET /EmpWebApp/Profile HTTP/1.1" 200 559
+127.0.0.1 - - [08/Jan/2024:17:10:45 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:17:10:46 +0530] "GET /EmpWebApp/Login.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:17:10:55 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 656
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:17:11:12 +0530] "GET /EmpWebApp/Logout HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:17:11:34 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 594
+0:0:0:0:0:0:0:1 - - [08/Jan/2024:17:11:36 +0530] "GET /EmpWebApp/Profile HTTP/1.1" 200 878
