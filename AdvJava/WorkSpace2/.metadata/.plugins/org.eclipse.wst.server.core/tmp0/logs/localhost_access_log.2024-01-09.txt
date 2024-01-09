@@ -120,3 +120,9 @@
 0:0:0:0:0:0:0:1 - - [09/Jan/2024:17:24:36 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 656
 0:0:0:0:0:0:0:1 - - [09/Jan/2024:17:24:38 +0530] "GET /EmpWebApp/GetAllEmps HTTP/1.1" 200 2310
 0:0:0:0:0:0:0:1 - - [09/Jan/2024:17:24:41 +0530] "GET /EmpWebApp/DeleteEmployee?empId=105 HTTP/1.1" 200 2084
+127.0.0.1 - - [09/Jan/2024:18:08:25 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [09/Jan/2024:18:08:25 +0530] "GET /EmpWebApp/Login.html HTTP/1.1" 200 659
+0:0:0:0:0:0:0:1 - - [09/Jan/2024:18:08:32 +0530] "POST /EmpWebApp/LoginServlet HTTP/1.1" 200 656
+0:0:0:0:0:0:0:1 - - [09/Jan/2024:18:08:35 +0530] "GET /EmpWebApp/GetAllEmps HTTP/1.1" 200 2264
+0:0:0:0:0:0:0:1 - - [09/Jan/2024:18:08:42 +0530] "GET /EmpWebApp/EditEmployee?empId=104 HTTP/1.1" 200 1942
+0:0:0:0:0:0:0:1 - - [09/Jan/2024:18:08:49 +0530] "POST /EmpWebApp/UpdateEmployee HTTP/1.1" 200 2264
