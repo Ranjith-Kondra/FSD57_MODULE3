@@ -15,6 +15,7 @@
 
 	<%@ include file="HRHomePage.jsp" %>
 
+	<% List<Employee> empList = (List<Employee>) request.getAttribute("empList"); %>
 
 	<table border="2" align="center">
 
@@ -26,18 +27,15 @@
 			<th>Email-Id</th>
 		</tr>
 
-		<c:forEach var="emp" items="${empList}">
-		
-		<tr>
-			<td> ${ emp.empId } </td>
-			<td> ${ emp.empName } </td>
-			<td> ${ emp.salary } </td>
-			<td> ${ emp.gender } </td>
-			<td> ${ emp.emailId } </td>
+		<%  for (Employee emp : empList) { %>
+		<tr align="center">
+			<td> <%= emp.getEmpId()   %> </td>
+			<td> <%= emp.getEmpName() %> </td>
+			<td> <%= emp.getSalary()  %> </td>
+			<td> <%= emp.getGender()  %> </td>
+			<td> <%= emp.getEmailId() %> </td>
 		</tr>
-		
-		</c:forEach>
-		
+		<% } %>
 
 	</table>
 
