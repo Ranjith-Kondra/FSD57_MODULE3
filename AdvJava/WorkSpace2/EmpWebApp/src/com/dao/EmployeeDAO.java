@@ -188,6 +188,41 @@ public Employee getEmployeeById(int empId) {
 	return null;
 }
 
+public int deleteEmployee(int empId) {
+	
+	Connection con = dbConnection.getConnection();
+	PreparedStatement pst = null;
+	
+	String deleteQuery = "delete from employee where empId=?";
+	
+	
+	try {
+		pst = con.prepareStatement(deleteQuery);
+		pst.setInt(1, empId);
+		
+		return pst.executeUpdate();
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	
+	finally {
+		if (con != null) {
+			try {
+				pst.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	return 0;
+}
+
+
+
+
 }
 
 

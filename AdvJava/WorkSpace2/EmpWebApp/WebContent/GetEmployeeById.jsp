@@ -9,9 +9,9 @@
 </head>
 <body>
 
-	<%@ include file="HRHomePage.jsp" %>
+	
 
-		
+		<jsp:include page="HRHomePage.jsp" />
 			<table border="2" align="center">
 
 			<tr>
