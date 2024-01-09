@@ -221,7 +221,7 @@ public int deleteEmployee(int empId) {
 }
 public int updateEmployee(Employee emp) {
 	
-	Connection con = dbConnection.getConnection();
+	Connection con = DbConnection.getConnection();
 	PreparedStatement pst = null;
 	
 	String updateQuery = "update employee set empName=?, salary=?, gender=?, emailId=?, password=? where empId=?";
