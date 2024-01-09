@@ -19,7 +19,7 @@
 		
 		<center>
 		<h1>Welcome to EmployeeHomePage</h1>		
-		<h3><a href='Profile.jsp'>Profile</a></h3>
+		<h3><a href='Profile'>Profile</a></h3>
 		</center>
 	
 		   

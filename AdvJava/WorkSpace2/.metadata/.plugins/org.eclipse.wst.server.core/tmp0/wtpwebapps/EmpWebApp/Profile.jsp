@@ -8,9 +8,9 @@
 </head>
 <body>
 
-    <%@ include file="HRHomePage.jsp" %>
+    <%@ include file="EmpHomePage.jsp" %>
 
-  <% Employee emp = (Employee) request.getAttribute("emp"); %>
+  
     
    <table border='2' align='center'>
 
@@ -22,13 +22,14 @@
 		<th>Email-Id</th>
 		<th>Password</th>
 		</tr>
-<tr>
-			<td> <%= emp.getEmpId()   %> </td>
-			<td> <%= emp.getEmpName() %> </td>
-			<td> <%= emp.getSalary()  %> </td>
-			<td> <%= emp.getGender()  %> </td>
-			<td> <%= emp.getEmailId() %> </td>
-			</tr>
+      <tr>
+			<td> ${ emp.empId } </td>
+			<td> ${ emp.empName } </td>
+			<td> ${ emp.salary } </td>
+			<td> ${ emp.gender } </td>
+			<td> ${ emp.emailId } </td>
+			<td> ${ emp.password } </td>
+		</tr>
 
 		</table>
 </body>
