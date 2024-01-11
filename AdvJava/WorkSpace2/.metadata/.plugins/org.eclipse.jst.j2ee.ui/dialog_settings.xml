@@ -6,6 +6,7 @@
 		<item value="NULL_RUNTIME"/>
 	</list>
 	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\fsd57_module3\EmpWebApp(final).war"/>
 		<item value="C:\fsd57_module3\EmpWebApp.war"/>
 	</list>
 </section>
