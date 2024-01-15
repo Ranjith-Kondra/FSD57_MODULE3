@@ -15,7 +15,7 @@
 		<form align='right'>
 		<a href='EmpHomePage'>Home</a> &nbsp;
 		<a href='Logout'>Logout</a>
-		<form>
+		</form>
 		
 		<center>
 		<h1>Welcome to EmployeeHomePage</h1>		

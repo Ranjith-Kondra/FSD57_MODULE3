@@ -14,6 +14,7 @@ import com.dto.Employee;
 
 @WebServlet("/UpdateEmployee")
 public class UpdateEmployee extends HttpServlet {
+	
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html");

@@ -10,7 +10,7 @@ public class HiController {
 	public String sayHi(){
 		return "Hi EveryOne!!!";
 	}
-    
+
 	@RequestMapping("sayHello")
 	public String sayHello(){
 		return "Hello EveryOne!!!";
