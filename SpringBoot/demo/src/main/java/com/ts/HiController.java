@@ -11,7 +11,7 @@ public class HiController {
 		return "Hi EveryOne!!!";
 	}
 
-	@RequestMapping("sayHello")
+	@RequestMapping("SayHello")
 	public String sayHello(){
 		return "Hello EveryOne!!!";
 	}
