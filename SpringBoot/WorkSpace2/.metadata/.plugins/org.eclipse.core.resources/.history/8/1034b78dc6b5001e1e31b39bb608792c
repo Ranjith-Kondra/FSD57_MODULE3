@@ -19,22 +19,6 @@ public class ProductDao {
 		return productRepository.findAll();
 		
 	}
-
-	public Product getProductById(int productId) {
-		Product product = new Product(0, "Product Not Found!!!", 0.0);
-		return productRepository.findById(productId).orElse(product);
-	}
-
-	public List<Product> getProductByName(String productName) {
-		return productRepository.findByName(productName);
-	}
-
-	public Product addProduct(Product product) {
-		return productRepository.save(product);
-	}
-
-
-
 	
 	
 

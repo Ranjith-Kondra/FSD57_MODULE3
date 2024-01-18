@@ -29,11 +29,6 @@ public class ProductDao {
 		return productRepository.findByName(productName);
 	}
 
-	public Product addProduct(Product product) {
-		return productRepository.save(product);
-	}
-
-
 
 	
 	
