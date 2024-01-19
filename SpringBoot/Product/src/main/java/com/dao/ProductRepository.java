@@ -12,11 +12,8 @@ import com.model.Product;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-	
+
 	@Query("from Product where prodName = :pName")
 	List<Product> findByName(@Param("pName") String productName);
-	
-
-	
 
 }

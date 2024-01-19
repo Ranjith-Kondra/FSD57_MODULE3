@@ -9,17 +9,16 @@ import javax.persistence.Id;
 public class Product {
 	@Id@GeneratedValue
 	private int prodId;			
-	
+
 	@Column(name="pname")
-	
 	private String prodName;
 	private double price;
-	
+
 	public Product() {
-		
+
 	}
 	public Product(int prodId, String prodName, double price) {
-		
+
 		this.prodId = prodId;
 		this.prodName = prodName;
 		this.price = price;

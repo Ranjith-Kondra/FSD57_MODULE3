@@ -1,0 +1,19 @@
+2024-01-19 09:34:26,993 [Worker-14] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-01-19 09:34:29,953 [Worker-14] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ts:EmpDept:0.0.1-SNAPSHOT @ C:\fsd57_module3\SpringBoot\EmpDept\pom.xml.
+2024-01-19 09:34:32,828 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EmpDept/src/main/java
+2024-01-19 09:34:32,828 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EmpDept/src/main/resources
+2024-01-19 09:34:32,837 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EmpDept/src/main/resources
+2024-01-19 09:34:32,858 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EmpDept/src/test/java
+2024-01-19 09:34:33,536 [Worker-8] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-01-19 09:34:33,555 [Worker-8] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-01-19 09:34:33,559 [Worker-8] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\fsd57_module3\SpringBoot\EmpDept\src\test\resources
+2024-01-19 09:34:35,261 [Worker-14] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 8 sec
+2024-01-19 09:34:35,599 [Worker-15] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2024-01-19 09:34:35,602 [Worker-15] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-01-19 09:34:35,603 [Worker-15] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\fsd57_module3\SpringBoot\EmpDept\src\test\resources
+2024-01-19 09:35:55,537 [Worker-15] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2024-01-19 09:35:56,174 [Worker-15] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ts:EmpDept:0.0.1-SNAPSHOT @ C:\fsd57_module3\SpringBoot\EmpDept\pom.xml.
+2024-01-19 09:35:56,814 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EmpDept/src/main/java
+2024-01-19 09:35:56,815 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EmpDept/src/main/resources
+2024-01-19 09:35:56,815 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /EmpDept/src/main/resources
+2024-01-19 09:35:56,815 [Worker-15] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /EmpDept/src/test/java

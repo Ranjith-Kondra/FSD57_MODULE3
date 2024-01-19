@@ -33,9 +33,15 @@ public class ProductDao {
 		return productRepository.save(product);
 	}
 
-
+	public Product updateProduct(Product product) {
+		
+		return productRepository.save(product);
+	}
 
 	
-	
+	public Product deleteProductById(int productId) {
+		productRepository.deleteById(productId);
+		return null;
+	}	
 
-}
+ }
