@@ -33,12 +33,16 @@ public class ProductDao {
 		return productRepository.save(product);
 	}
 
-	public Product updateProduct(Product product) {
-		
-		return productRepository.save(product);
-	}
+	public Product updateProduct(Product updatedProduct) {
+        int productId = updatedProduct.getProdId();
 
-	
+        if (productRepository.existsById(productId)) {
+            return productRepository.save(updatedProduct);
+        } else {
+            return null;
+        }
+    }
+
 	public Product deleteProductById(int productId) {
 		productRepository.deleteById(productId);
 		return null;
