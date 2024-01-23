@@ -1,13 +1,20 @@
-
 package com.model;
 
-import javax.persistence.*;
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.util.Date;
 
-@Entity 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Employee {
 
-    @Id@GeneratedValue
+    @Id
+    @GeneratedValue
     private int empId;
     private String empName;
     private double salary;
@@ -17,18 +24,46 @@ public class Employee {
     private String emailId;
     private String password;
 
-    
+    // Implementing Mapping Between Employee and Department
+    @ManyToOne
+    @JoinColumn(name = "deptId")
+    Department department;
+
     public Employee() {
     }
 
-    public Employee(String empName, double salary, String gender, Date doj, String country, String emailId, String password) {
+    // Parameterized Constructor without empId
+    public Employee(String empName, double salary, String gender, Date doj, String country, String emailId,
+            String password) {
         this.empName = empName;
         this.salary = salary;
         this.gender = gender;
         this.doj = doj;
         this.country = country;
         this.emailId = emailId;
-        this.password = password;
+        this.password = hashPassword(password);
+    }
+
+    public Employee(int empId, String empName, double salary, String gender, Date doj, String country, String emailId,
+            String password) {
+        this.empId = empId;
+        this.empName = empName;
+        this.salary = salary;
+        this.gender = gender;
+        this.doj = doj;
+        this.country = country;
+        this.emailId = emailId;
+        this.password = hashPassword(password);
+    }
+
+    // Generating Getter for department Variable
+    public Department getDepartment() {
+        return department;
+    }
+
+    // Generating Setter for department Variable
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public int getEmpId() {
@@ -88,14 +123,14 @@ public class Employee {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = hashPassword(password);
     }
 
-	@Override
-	public String toString() {
-		return "Employee [empId=" + empId + ", empName=" + empName + ", salary=" + salary + ", gender=" + gender
-				+ ", doj=" + doj + ", country=" + country + ", emailId=" + emailId + ", password=" + password + "]";
-	}
-    
-    
+    public boolean checkPassword(String candidatePassword) {
+        return BCrypt.checkpw(candidatePassword, this.password);
+    }
+
+    private String hashPassword(String plainTextPassword) {
+        return BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
+    }
 }
