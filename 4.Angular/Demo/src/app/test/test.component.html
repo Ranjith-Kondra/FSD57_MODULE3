@@ -1,1 +1,15 @@
-<p>test works!</p>
+<div>
+Id: {{id}} <br/>
+Name: {{name}} <br/>
+Avg: {{avg}} <br/><br/>
+
+<b><u>Address</u></b><br/>
+StreetNo: {{address.streetNo}} <br/>
+City: {{address.city}}<br/>
+state: {{address.state}}<br/><br/>
+
+<b><u>Hobbies</u></b>
+<ul>
+ <li *ngFor = "let hobby of hobbies">{{hobby}}</li>
+</ul>
+</div>
