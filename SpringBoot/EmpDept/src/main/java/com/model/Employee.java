@@ -1,7 +1,5 @@
 package com.model;
 
-import org.mindrot.jbcrypt.BCrypt;
-
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.mindrot.jbcrypt.BCrypt;
 
 @Entity
 public class Employee {
@@ -23,6 +23,8 @@ public class Employee {
     private String country;
     private String emailId;
     private String password;
+    private String phoneNumber;
+    private String otp;
 
     // Implementing Mapping Between Employee and Department
     @ManyToOne
@@ -34,7 +36,7 @@ public class Employee {
 
     // Parameterized Constructor without empId
     public Employee(String empName, double salary, String gender, Date doj, String country, String emailId,
-            String password) {
+            String password, String phoneNumber, String otp) {
         this.empName = empName;
         this.salary = salary;
         this.gender = gender;
@@ -42,10 +44,12 @@ public class Employee {
         this.country = country;
         this.emailId = emailId;
         this.password = hashPassword(password);
+        this.phoneNumber = phoneNumber;
+        this.otp = otp;
     }
 
     public Employee(int empId, String empName, double salary, String gender, Date doj, String country, String emailId,
-            String password) {
+            String password, String phoneNumber, String otp) {
         this.empId = empId;
         this.empName = empName;
         this.salary = salary;
@@ -54,9 +58,27 @@ public class Employee {
         this.country = country;
         this.emailId = emailId;
         this.password = hashPassword(password);
+        this.phoneNumber = phoneNumber;
+        this.otp = otp;
     }
 
-    // Generating Getter for department Variable
+    public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getOtp() {
+		return otp;
+	}
+
+	public void setOtp(String otp) {
+		this.otp = otp;
+	}
+
+	// Generating Getter for department Variable
     public Department getDepartment() {
         return department;
     }
@@ -130,6 +152,7 @@ public class Employee {
         return BCrypt.checkpw(candidatePassword, this.password);
     }
 
+    // Hash the password using BCrypt
     private String hashPassword(String plainTextPassword) {
         return BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
     }

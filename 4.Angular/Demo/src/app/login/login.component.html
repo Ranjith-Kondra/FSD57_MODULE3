@@ -1,10 +1,24 @@
-Enter EmailId: <input type="text" name="emailId" [(ngModel)] ="emailId" /><br/>
-Enter password: <input type="password" [(ngModel)] ="password" /><br/><br/>
+<!-- Enter EmailId: <input type="text"     name="emailId"  [(ngModel)]="emailId" /><br/>
+Enter Password:<input type="password" name="password" [(ngModel)]="password" /><br/>
+<button (click)="submit()">Login</button> -->
 
+<div align = 'center'>
+    <h2>Login Form</h2>
 
-<button (click)="submit()">Login</button><br/>
-
-<!-- 
-Email id:{{emailId}}<br/>
-password:{{password}}<br/> -->
-
+    <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm.value)">
+        <table>
+            <tr>
+                <td>Enter EmailId</td>
+                <td><input type="text" name="emailId" ngModel /></td>
+            </tr>
+            <tr>
+                <td>Enter Password</td>
+                <td><input type="password" name="password" ngModel /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button>Login</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
