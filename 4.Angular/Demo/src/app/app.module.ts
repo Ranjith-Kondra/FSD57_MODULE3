@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { Test2Component } from './test2/test2.component';
@@ -11,6 +9,13 @@ import { RegisterComponent } from './register/register.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ShowempbyidComponent } from './showempbyid/showempbyid.component';
 import { ProductsComponent } from './products/products.component';
+import { ExpPipe } from './exp.pipe';
+import { GenderPipe } from './gender.pipe';
+import { HeaderComponent } from './header/header.component';
+import { LogoutComponent } from './logout/logout.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -21,12 +26,19 @@ import { ProductsComponent } from './products/products.component';
     RegisterComponent,
     EmployeeComponent,
     ShowempbyidComponent,
-    ProductsComponent
+    ProductsComponent,
+    ExpPipe,
+    GenderPipe,
+    HeaderComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    ToastrModule.forRoot()
+    
     
   ],
   providers: [],

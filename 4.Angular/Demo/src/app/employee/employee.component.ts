@@ -8,63 +8,20 @@ import { Component, OnInit} from '@angular/core';
 export class EmployeeComponent implements OnInit{
 
 employees : any ; 
+emailId : any;
 
 
 constructor(){
-  this.employees = [
+  //Getting emailId from LocalStorage
+  this.emailId = localStorage.getItem('emailId');
 
-    {
-     empId : 101,
-     empName : 'vinay',
-     salary : 200000,
-     gender : 'Male',
-     dateOfjoining : '2020-01-10',
-     country : 'INDIA',
-     emailId : 'vinay@gmail.com',
-     password : 123
-    },
-    {
-     empId: 102,
-     empName: 'uday', 
-     salary: 300000,
-     gender : 'Male',
-     dateOfjoining: '2022-02-11',
-     country : 'USA',
-     emailId:'uday@gmail.com',
-     password:111
-    },
-    {
-     empId: 103,
-     empName: 'vamshi', 
-     salary: 400000,
-     gender : 'Male',
-     dateOfjoining: '2023-02-11',
-     country : 'UK',
-     emailId:'vamshi@gmail.com',
-     password:222
-    },
-    {
-     empId: 104,
-     empName: 'pranay', 
-     salary: 500000,
-     gender : 'Male',
-     dateOfjoining: '2024-02-11',
-     country : 'INDIA',
-     emailId:'pranay@gmail.com',
-     password:333
-    },
-    {
-     empId: 105,
-     empName: 'karthik', 
-     salary: 700000,
-     gender : 'Male',
-     dateOfjoining: '2021-03-11',
-     country : 'INDIA',
-     emailId:'karthik@gmail.com',
-     password:444
-    }
-   ];
-   
+  this.employees = [
+    {empId: 101, empName:'Harsha', salary:1212.12, gender:'Male',   doj:'2018-11-15', country:'India',    emailId:'harsha@gmail.com', password:'123'},
+    {empId: 102, empName:'Pasha',  salary:2323.23, gender:'Male',   doj:'2017-10-16', country:'China',    emailId:'pasha@gmail.com',  password:'123'},
+    {empId: 103, empName:'Indira', salary:3434.34, gender:'Female', doj:'2016-09-17', country:'USA',      emailId:'indira@gmail.com', password:'123'},
+    {empId: 104, empName:'Vamsi',  salary:4545.45, gender:'Male',   doj:'2015-08-18', country:'SriLanka', emailId:'vamsi@gmail.com',  password:'123'},
+    {empId: 105, empName:'Venkat', salary:5656.56, gender:'Male',   doj:'2014-07-19', country:'Nepal',    emailId:'venkat@gmail.com', password:'123'}
+  ];
 
   }
 ngOnInit() {
