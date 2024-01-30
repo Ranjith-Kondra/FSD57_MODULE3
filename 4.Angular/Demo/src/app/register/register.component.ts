@@ -45,6 +45,7 @@
 // }
 
 import { Component, OnInit } from '@angular/core';
+import { EmpService } from '../emp.service';
 
 @Component({
   selector: 'app-register',
@@ -53,11 +54,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
     
-  constructor() {
+  countries: any;
+
+  constructor(private service: EmpService) {
   }
 
+
   ngOnInit() {
+    this.service.getAllCountries().subscribe((data: any) => {
+      this.countries = data;
+      console.log(data);
+    });
   }
+  
  
 
   registerSubmit(regForm: any) {

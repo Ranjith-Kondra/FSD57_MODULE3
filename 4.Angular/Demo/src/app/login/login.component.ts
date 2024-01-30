@@ -148,6 +148,9 @@ import { Component, OnInit } from '@angular/core';
 //Import Router class
 import { Router } from '@angular/router';
 
+//Import EmpService
+import { EmpService } from '../emp.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -160,7 +163,7 @@ export class LoginComponent implements OnInit {
   employees: any;
   emp: any;
 
-  constructor(private router: Router,private toastr:ToastrService) {
+  constructor(private router: Router,private toastr:ToastrService,private service: EmpService) {
 
     this.employees = [
       {empId: 101, empName:'Harsha', salary:1212.12, gender:'Male',   doj:'2018-11-15', country:'India',    emailId:'harsha@gmail.com', password:'123'},
@@ -186,6 +189,9 @@ export class LoginComponent implements OnInit {
 
     if (loginForm.emailId == 'HR' && loginForm.password == 'HR') {
       
+       //Setting the isUserLoggedIn variable value to true under EmpService
+       this.service.setIsUserLoggedIn();
+
       //Storing EmailId under LocalStorage
       localStorage.setItem("emailId", loginForm.emailId);
       this.toastr.success("Login sucess");
@@ -201,7 +207,10 @@ export class LoginComponent implements OnInit {
       });
 
       if (this.emp != null) {
-
+        
+        //Setting the isUserLoggedIn variable value to true under EmpService
+        this.service.setIsUserLoggedIn();
+        
         //Storing EmailId under LocalStorage
         localStorage.setItem("emailId", loginForm.emailId);
         this.toastr.success("Login sucess");

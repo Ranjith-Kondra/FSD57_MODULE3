@@ -58,19 +58,27 @@
 </form>
 </div> -->
 
-
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <div>
     <h2 align="center">Registration Form</h2>
 
     <form #registrationForm="ngForm" (ngSubmit)="registerSubmit(registrationForm.value)">
         <table align="center">
             <tr>
-                <td>Employee Name</td>
-                <td><input type="text" name="empName" ngModel required /></td>
+               <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <td><input type="text" class="form-control" placeholder="Enter empName" name="empName" ngModel required /></td>
+               </div>
+               
             </tr>
             <tr>
-                <td>Salary</td>
-                <td><input type="text" name="salary" ngModel required /></td>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-inr"></i></span>
+                    <td><input type="text" class="form-control" placeholder="Enter salary" name="salary" ngModel required /></td>
+                   </div>
             </tr>
             <tr>
                 <td>Gender</td>
@@ -90,14 +98,14 @@
             <tr>
                 <td>Country</td>
                 <td>
-                    <select name="country" ngModel required>
+                    <select name="country" ngModel >
                         <option value="" selected>Select Country</option>
-                        <option value="IND">India</option>
-                        <option value="USA">USA</option>
-                        <option value="CAN">Canada</option>
+                        <option value="{{country.cca3}}" *ngFor="let country of countries">{{country.name.common}}</option>
+                       
                     </select>
                 </td>
             </tr>
+    
             <tr>
                 <td>EmailId</td>
                 <td>
