@@ -23,6 +23,22 @@ ngOnInit() {
     this.employees = data;
 });
     
-  }
+}
+editEmployee(emp: any) {
+    
+}
+
+
+deleteEmployee(emp: any) {
+  this.service.deleteEmployee(emp.empId).subscribe((data: any) => {console.log(data);});
+
+  const i = this.employees.findIndex((element: any) => {
+    return element.empId = emp.empId;
+  });
+
+  this.employees.splice(i, 1);
+
+  alert('Employee Deleted Successfully!!!');
+}
 
 }

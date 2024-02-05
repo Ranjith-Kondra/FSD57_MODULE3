@@ -38,7 +38,9 @@ employeeLogin(emailId: any, password: any): any {
   return this.http.get('http://localhost:8085/empLogin/' + emailId + '/' + password).toPromise();
 }
 
-
+deleteEmployee(empId: any) {
+  return this.http.delete('http://localhost:8085/deleteEmployeeById/' + empId);
+}
 
 //Cart using Service
 addToCart(product: any) {

@@ -29,7 +29,8 @@
                 <td>{{emp.doj | date:'dd-MMM-yyyy'}}</td>
                 <td>{{emp.country}}</td>
                 <td>{{emp.emailId}}</td>
-                <button><span class="glyphicon glyphicon-pencil"></span></button> &nbsp;&nbsp;<button><span class="glyphicon glyphicon-trash"></span></button>
+                <td><button (click)="editEmployee(emp)" class="glyphicon glyphicon-pencil"></button></td>
+                <td><button (click)="deleteEmployee(emp)" class="glyphicon glyphicon-trash"></button></td>
                 
             </tr>
         </tbody>
