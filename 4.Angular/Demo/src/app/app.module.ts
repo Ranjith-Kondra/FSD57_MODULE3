@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ExpPipe,
     GenderPipe,
     HeaderComponent,
-    LogoutComponent
+    LogoutComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -15,14 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dao.EmployeeDao;
 import com.model.Employee;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class EmployeeController {
 	
 	@Autowired
 	EmployeeDao employeeDao;
 	
-	
+	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("getEmployees")
 	public List<Employee> getEmployees() {
 		return employeeDao.getEmployees();
