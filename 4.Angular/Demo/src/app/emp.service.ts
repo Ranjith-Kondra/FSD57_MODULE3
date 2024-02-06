@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +8,14 @@ import { HttpClient } from '@angular/common/http';
 export class EmpService {
 
   isUserLoggedIn: boolean;
+  loginStatus: any;
     //Cart using Service
     cartItems: any;
 
   //Dependency Injection for HttpClient
   constructor(private http: HttpClient) { 
     this.isUserLoggedIn = false;
+    this.loginStatus = new Subject();
      //Cart using Service
      this.cartItems = [];
   }
@@ -41,6 +44,11 @@ employeeLogin(emailId: any, password: any): any {
 deleteEmployee(empId: any) {
   return this.http.delete('http://localhost:8085/deleteEmployeeById/' + empId);
 }
+updateEmployee(employee: any) {
+  return this.http.put('http://localhost:8085/updateEmployee', employee);
+}
+
+
 
 //Cart using Service
 addToCart(product: any) {
@@ -53,10 +61,14 @@ getCartItems(): any {
   //Login
   setIsUserLoggedIn() {
     this.isUserLoggedIn = true;
+    this.loginStatus.next(true);
   }
 
   getIsUserLogged(): boolean {
     return this.isUserLoggedIn;
+  }
+  getLoginStatus(): any {
+    return this.loginStatus.asObservable();
   }
 
   //Logout
